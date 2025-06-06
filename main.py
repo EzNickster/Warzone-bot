@@ -183,8 +183,9 @@ class HistoryView(discord.ui.View):
         for i, entry in enumerate(entries):
             self.add_item(HistoryDeleteButton(i, entry))
 
-@bot.command()
-async def history(ctx):
+@bot.command(name="history")
+async def history_cmd(ctx):
+:
     user_id = ctx.author.id
     user_history = [entry for entry in history if entry["user_id"] == user_id]
     if not user_history:
