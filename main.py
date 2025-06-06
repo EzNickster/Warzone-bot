@@ -194,8 +194,7 @@ async def history_cmd(ctx):
     for i, entry in enumerate(user_history[-10:], start=1):
         mode = entry["mode"]
         player_mentions = ", ".join(f"<@{pid}>" for pid in entry["players"])
-        description += f"**{i}.** `{mode}` mit: {player_mentions}
-"
+description += f"**{i}.** `{mode}` mit: {player_mentions}\n"
     embed = discord.Embed(
         title="🕘 Deine letzten Siege",
         description=description,
