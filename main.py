@@ -47,7 +47,11 @@ def load_data():
             user_siege.clear()
             user_siege.update({int(k): v for k, v in data.get("user_siege", {}).items()})
             user_mode_wins.clear()
-            user_mode_wins.update({int(k): v for k, v in data.get("user_mode_wins", {}).items()})
+            user_mode_wins.update({
+    int(k): {str(mode): int(count) for mode, count in v.items()}
+    for k, v in data.get("user_mode_wins", {}).items()
+})
+
             leaderboard_message.clear()
             leaderboard_message.update(data.get("leaderboard_message", {}))
             history.clear()
