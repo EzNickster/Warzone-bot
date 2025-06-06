@@ -209,7 +209,8 @@ async def history_cmd(ctx):
     )
     embed.set_footer(text="Klicke unten, um einen Sieg aus deiner Liste zu löschen.")
     view = HistoryView(user_history[-10:])
-    await ctx.send(embed=embed, view=view, ephemeral=True)async def update_leaderboard(guild, channel=None):
+    await ctx.send(embed=embed, view=view, ephemeral=True)
+    async def update_leaderboard(guild, channel=None):
     if not leaderboard_message["channel_id"] or not leaderboard_message["message_id"]:
         return
     channel = channel or guild.get_channel(leaderboard_message["channel_id"])
