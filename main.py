@@ -12,13 +12,15 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 # Spielmodi
 modes = [
     "Warzone Einfach 4er",
+    "Warzone Einfach Solo",
     "Warzone Solo",
     "Warzone Duo",
     "Warzone 4er",
     "Rebirth Solo",
     "Rebirth Duo",
     "Rebirth Trio",
-    "Rebirth 4er"
+    "Rebirth 4er",
+    "Ranked"
 ]
 
 win_counts = {mode: 0 for mode in modes}
